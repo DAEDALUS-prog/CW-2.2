@@ -1,20 +1,20 @@
-package by.timmy.calories.user;
+package by.timmy.calories.person;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table
-public class User {
+public class Person {
 
     @Id
     @SequenceGenerator(
-            name="user_sequence",
-            sequenceName="user_sequence",
+            name="person_sequence",
+            sequenceName="person_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
+            generator = "person_sequence"
     )
     private Long id;
     private String name;
@@ -22,14 +22,15 @@ public class User {
     private Integer status;
     private String password;
 
-    public User() {
+
+    public Person() {
     }
 
-    public User(Long id,
-                String name,
-                String email,
-                Integer status,
-                String password) {
+    public Person(Long id,
+                  String name,
+                  String email,
+                  Integer status,
+                  String password) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -37,10 +38,10 @@ public class User {
         this.password = password;
     }
 
-    public User(String name,
-                String email,
-                Integer status,
-                String password) {
+    public Person(String name,
+                  String email,
+                  Integer status,
+                  String password) {
         this.name = name;
         this.email = email;
         this.status = status;
@@ -89,7 +90,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
