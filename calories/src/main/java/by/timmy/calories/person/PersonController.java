@@ -16,13 +16,18 @@ public class PersonController {
         this.personService = userService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<Person> getUsers() {
         return personService.getUsers();
     }
 
     @PostMapping
-    public void registerNewUser(@RequestBody Person person) {
+    public void registerNewPerson(@RequestBody Person person) {
         personService.addNewPerson(person);
+    }
+
+    @DeleteMapping(path = "{personId}")
+    public void deletePerson(@PathVariable("personId") Long personId) {
+        personService.deletePerson(personId);
     }
 }
