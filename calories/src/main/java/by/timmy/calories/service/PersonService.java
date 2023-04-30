@@ -2,6 +2,7 @@ package by.timmy.calories.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import by.timmy.calories.models.Person;
 import by.timmy.calories.repository.PersonRepository;
@@ -16,6 +17,7 @@ public class PersonService {
         return personRepository.findByEmail(email);
     }
 
+    @Transactional
     public void save(Person person) {
         personRepository.save(person);
     }
