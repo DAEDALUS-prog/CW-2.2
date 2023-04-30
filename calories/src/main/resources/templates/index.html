@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calories</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/icons/icon.png" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="/css/main-style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/list-style.css">
+    <script src="js/script.js"></script>
+    <script src="js/list-script.js"></script>
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+<div class="body">
+        <span>
+            <div class="search-box">
+                <input type="text" class="search-txt" placeholder="Search">
+                <a href="#" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </div>
+        </span>
+    <div class="joke-line">
+        <p th:text="${joke}"/>
+    </div>
+    <p>test</p>
+    <div th:each="el : ${persons}" class="align-items-center">
+        <h3 th:text="${el.name}"/>
+        <p th:text="${el.status}"/>
+        <a th:href="'/history/' + ${el.id}">y</a>
+    </div>
+    <div>
+		<h1 class="head">History</h1>
+		<div th:insert="~{blocks/list :: list}"></div>
+	</div>
+    <div class="btn-arraw-up">
+        <a href="#search" class="arrowUp ">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+</div>
+</body>
+</html>
