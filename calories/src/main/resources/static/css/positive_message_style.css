@@ -6,16 +6,13 @@ $orange: #FFC39E;
 $success: #B0DB7D;
 $secondary: #99DBB4;
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
-$font: 'Lato', sans-serif;
-
-html {
+.container html {
   display: grid;
   min-height: 100%;
 }
 
-body {
+.container body {
   display: grid;
   overflow: hidden;
   font-family: $font;
@@ -23,7 +20,7 @@ body {
   text-align: center;
 }
 
-#container {
+.container #container {
   position: relative;
   margin: auto;
   overflow: hidden;
@@ -31,7 +28,7 @@ body {
   height: 250px;
 }
 
-h1 {
+.container h1 {
   font-size: 0.9em;
   font-weight: 100;
   letter-spacing: 3px;
@@ -41,20 +38,20 @@ h1 {
   text-transform: uppercase;
 }
 
-.green {
+.container.green {
   color: darken($secondary, 20%);
 }
 
-.red {
+.container.red {
   color: darken($error, 10%);
 }
 
-.alert {
+.container.alert {
   font-weight: 700;
   letter-spacing: 5px;
 }
 
-p {
+.container p {
   margin-top: -5px;
   font-size: 0.5em;
   font-weight: 100;
@@ -62,11 +59,11 @@ p {
   letter-spacing: 1px;
 }
 
-button, .dot {
+.container button, .dot {
   cursor: pointer;
 }
 
-#success-box {
+.container #success-box {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -79,9 +76,7 @@ button, .dot {
   
 }
 
-
-
-.face {
+.container.face {
   position: absolute;
   width: 22%;
   height: 22%;
@@ -96,7 +91,7 @@ button, .dot {
 
 
 
-.eye {
+.container.eye {
   position: absolute;
   width: 5px;
   height: 5px;
@@ -106,11 +101,11 @@ button, .dot {
   left: 20%;
 }
 
-.right {
+.container.right {
   left: 68%;
 }
 
-.mouth {
+.container.mouth {
   position:absolute;
   top: 43%;
   left: 41%;
@@ -119,14 +114,14 @@ button, .dot {
   border-radius: 50%;
 }
 
-.happy {
+.container.happy {
   border: 2px solid;
   border-color: transparent $dark $dark transparent;
   transform: rotate(45deg);
 }
 
 
-.shadow {
+.container.shadow {
   position: absolute;
   width: 21%;
   height: 3%;
@@ -138,15 +133,15 @@ button, .dot {
   z-index: 1;
 }
 
-.scale {
+.container.scale {
   animation: scale 1s ease-in infinite;
 }
-.move {
+.container.move {
   animation: move 3s ease-in-out infinite;
 }
 
 
-.message {
+.container.message {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -154,7 +149,7 @@ button, .dot {
   top: 47%;
 }
 
-.button-box {
+.container.button-box {
   position: absolute;
   background: $white;
   width: 50%;
@@ -209,27 +204,5 @@ button, .dot {
   }
   100% {
     left: 25%;
-  }
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  font-size: 1em;
-  text-transform: uppercase;
-  padding: 10px;
-  font-family: $font;
-  p {
-    color: $error;
-    letter-spacing: 2px;
-  }
-  a {
-    color: $success;
-    text-decoration: none;
-    &:hover {
-      color: $orange;
-    }
   }
 }

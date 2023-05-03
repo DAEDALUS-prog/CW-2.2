@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap-grid.css">
     <link rel="stylesheet" type="text/css" href="/css/sign-style.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/positive_message_style.css">
     <script src="js/script.js"></script>
 </head>
 <body>
@@ -37,7 +38,13 @@
             </div>
         </div>
     </div>
+    <div id="modalContainer">
+        <div th:insert="~{blocks/positive_message :: positive}"></div>
+    </div> <!-- контейнер для модального окна -->
+
 </div>
     <script src="js/sign-script.js"></script>
+    <script src="js/positive_script.js"></script>
 </body>
 </html>
+

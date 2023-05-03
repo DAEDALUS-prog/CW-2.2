@@ -10,45 +10,6 @@ signInButton.addEventListener('click', () => {
     container.classList.remove("right-panel-active");
 });
 
-// function validateForm() {
-//     var name = document.forms["sign-up"]["name"].value;
-//     var email = document.forms["sign-up"]["email"].value;
-//     var password = document.forms["sign-up"]["password"].value;
-    
-//     if (name == "" || email == "" || password == "") {
-//         alert("Please fill in all fields.");
-//         return false;
-//     }
-
-//     if (name.length < 3) {
-//         alert("Please enter a name with at least 3 characters.");
-//         return false;
-//     }
-    
-//     if (password.length < 6) {
-//         alert("Please enter a password with more than 5 characters.");
-//         return false;
-//     }
-
-
-//     var existsEmail = false;
-//     var xhr = new XMLHttpRequest();
-//     xhr.open("GET", "/check-email?email=" + email); // Отправляем GET-запрос на сервер
-//     xhr.onload = function() {
-//         if (xhr.status === 200) {
-//             if (xhr.responseText === "true") {
-//                 // Отображаем сообщение об ошибке
-//                  alert("Email already exists");
-//                  existsEmail = true;
-//             } 
-//     };
-//     xhr.send();
-//     if (existsEmail) {
-//         return false;
-//     }
-//     return true;
-// }
-// }
 
 function validateForm() {
     var name = document.forms["sign-up"]["name"].value;

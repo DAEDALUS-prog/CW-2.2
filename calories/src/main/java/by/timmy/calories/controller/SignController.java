@@ -30,6 +30,7 @@ public class SignController {
     @PostMapping("/sign-up")
     public String signUpPost(@ModelAttribute("person") Person person, Model model) {
         personRepository.save(person);
+        showModalPositive(model);
         return "redirect:/";
     }
 
@@ -51,6 +52,17 @@ public class SignController {
         Person person = personRepository.findByEmail(email);
         return person != null;
     }
+
+    @GetMapping("/positive")
+    public String showModalPositive(Model model) {
+        return "blocks/positive_message"; 
+    }
+
+    @GetMapping("/negativ")
+    public String showModalNegativ(Model model) {
+        return "modalPage"; 
+    }
+
 
     
 }
