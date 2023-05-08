@@ -1,0 +1,13 @@
+{% extends 'cls/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'cls/css/style-search.css' %}" />
+
+    <ul>
+        {% for item in result.results %}
+        <p>{{ item.title }}</p>
+        <span>{{ info.calories }}</span>
+        {% endfor %}
+      </ul>
+      
+{% endblock %}

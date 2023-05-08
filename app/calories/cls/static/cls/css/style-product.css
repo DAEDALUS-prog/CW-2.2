@@ -1,0 +1,19 @@
+dl {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  dt {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  dd {
+    margin-bottom: 1rem;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  

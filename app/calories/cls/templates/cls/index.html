@@ -1,0 +1,23 @@
+{% extends 'cls/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cls/css/style.css' %}" />
+    <div class="body">
+        <span>
+            <form method="GET" action="{% url 'search' %}">
+                <div class="search-box">
+                    <input type="text" class="search-txt" name="query" placeholder="Поиск">
+                    <button type="submit" class="search-btn"><img id="search-ico" src="static/icons/search.png" /></button>
+                </div>
+            </form>
+            
+        </span>
+        <div class="joke-line" style="margin-top: 300px;">
+            <p>{{ joke }}</p>
+        </div>
+        <div>
+            <p>elements</p>
+        </div>
+    </div>
+    <script src="{% static 'cls/js/script.css' %}"></script>
+{% endblock %}

@@ -19,5 +19,5 @@ class Product(models.Model):
 
 class History(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
-    desciption = models.TextField(max_length=150)
+    desciption = models.ForeignKey(Product, on_delete=models.CASCADE)
     

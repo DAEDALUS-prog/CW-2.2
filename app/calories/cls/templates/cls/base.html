@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'cls/images/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'cls/css/style-header.css' %}" />
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <title>Calories</title>
+</head>
+<body style="background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);">
+<div class="header">
+    <div class="logo">
+        <a href="/"><img width="140px" src="{% static 'cls/images/logoi.png' %}" alt="logo"></a>
+    </div>
+    <div class="icons">
+        <div class="button-about-us">
+            <span>ABOUT US</span>
+            <img src="{% static 'cls/images/about-us.png' %}" alt="logo">        
+        </div>
+        <div class="button-settings">
+            <span>SETTINGS</span>
+            <img src="{% static 'cls/images/settings.png' %}" alt="logo">        
+        </div>
+        <div class="button-profile">
+            <a class='cd-sign' href="/sign"><span>PROFILE</span></a>
+            <img src="{% static 'cls/images/profile.png' %}" alt="logo">         
+        </div>
+    </div>
+</div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

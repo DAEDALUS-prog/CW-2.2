@@ -1,0 +1,24 @@
+{% extends 'cls/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'cls/css/style-product.css' %}" />
+
+<dl>
+    <dt>Name</dt>
+    <dd>{{ result.title }}</dd>
+    <dt>Description</dt>
+    <dd>{{ result.descript }}</dd>
+    <dt>Calories</dt>
+    <dd>{{ result.calories }}</dd>
+    <dt>Protein</dt>
+    <dd>{{ result.protein }}</dd>
+    <dt>Fat</dt>
+    <dd>{{ result.fat }}</dd>
+    <dt>Carbs</dt>
+    <dd>{{ result.carbs }}</dd>
+    <img src={{ result.image_url }} />
+
+  </dl>
+  
+      
+{% endblock %}
