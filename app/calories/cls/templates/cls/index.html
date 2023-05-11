@@ -7,17 +7,25 @@
             <form method="GET" action="{% url 'search' %}">
                 <div class="search-box">
                     <input type="text" class="search-txt" name="query" placeholder="Поиск">
-                    <button type="submit" class="search-btn"><img id="search-ico" src="static/icons/search.png" /></button>
+                    <button type="submit" class="search-btn"><img id="search-ico" src="{% static 'cls/images/search.png' %}" /></button>
                 </div>
             </form>
             
         </span>
-        <div class="joke-line" style="margin-top: 300px;">
-            <p>{{ joke }}</p>
+        <div class="joke-line">
+            <p class="joke">{{ joke }}</p>
         </div>
-        <div>
-            <p>elements</p>
+        {% if user %}
+        <div class="history">
+            <h1 id="history">History</h1>
+            {% for product in history.product %}
+                <div class="product">
+                    <p><a href="{% url 'product' product.id %}">product.title</a></p>
+                    <img src={{ product.image_url }} />
+                </div>
+            {% endfor %}
         </div>
+        {% endif %}
     </div>
     <script src="{% static 'cls/js/script.css' %}"></script>
 {% endblock %}

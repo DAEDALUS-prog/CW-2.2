@@ -8,7 +8,7 @@ def get_search_results(query):
     params = {
         'query': query,
         'apiKey': API_KEY,
-        'number': 10,
+        'number': 21,
         'instructionsRequired': True,
         'addRecipeInformation': True
     }
@@ -63,3 +63,15 @@ def get_product_info(product_id):
     else:
         # Возвращаем None, если запрос не удался
         return None
+
+
+def split_dict_equally(input_dict):
+    # Определяем количество элементов в словаре
+    dict_len = len(input_dict)
+    # Рассчитываем количество элементов в каждом новом словаре
+    split_size = dict_len // 3
+    # Разбиваем словарь на три новых словаря
+    dict_1 = dict(list(input_dict.items())[:split_size])
+    dict_2 = dict(list(input_dict.items())[split_size:2*split_size])
+    dict_3 = dict(list(input_dict.items())[2*split_size:])
+    return dict_1, dict_2, dict_3

@@ -2,12 +2,15 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'cls/css/style-search.css' %}" />
+      <section class="demo">
+        <dl class="list">
+            <dt>Product</dt>
+            {% for item in result1.results %}
+            <dd><a href="{% url 'product' item.id %}">{{ item.title }}</a></dd>
+            {% endfor %}
+        </dl>
+    </section>
+    
 
-    <ul>
-        {% for item in result.results %}
-        <p>{{ item.title }}</p>
-        <span>{{ info.calories }}</span>
-        {% endfor %}
-      </ul>
-      
+<script src="{% static 'cls/js/script-search.js' %}"></script>
 {% endblock %}

@@ -53,8 +53,12 @@
 }
 
 .joke-line {
-    margin: 0 auto;
-    width: 50%;
+	margin-top: 220px;
+}
+
+.joke {
+	text-align: center;
+	font-size: 30px;
 }
 
 
