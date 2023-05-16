@@ -2,45 +2,44 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'cls/css/style-sign.css' %}" />
-	<div class="container right-panel-active">
-		<!-- Sign Up -->
-		<div class="container__form container--signup">
-			<form class="form" id="form1" method="post">
-				{% csrf_token %}
-				<h2 class="form__title">Sign Up</h2>
-				<input type="name" placeholder="User" class="input" />
-				<input type="email" placeholder="Email" class="input" />
-				<input type="password" placeholder="Password" class="input" />
-				<button type="submit" name="sign_up" class="btn">Sign Up</button>
-			</form>
-		</div>
-	
-		<!-- Sign In -->
-		<div class="container__form container--signin">
-			<form class="form" id="form2" method="post">
-				{% csrf_token %}
-				<h2 class="form__title">Sign In</h2>
-				<input type="email" placeholder="Email" class="input" />
-				<input type="password" placeholder="Password" class="input" />
-				<a href="#" class="link">Forgot your password?</a>
-				<button type="submit" name="sign_in" class="btn">Sign In</button>
-			</form>
-		</div>
-	
-		<!-- Overlay -->
-		<div class="container__overlay">
-			<div class="overlay">
-				<div class="overlay__panel overlay--left">
-					<button class="btn" id="signIn">Sign In</button>
+		<div class="container right-panel-active">
+			<form method="POST" action="{% url 'sign' %}">
+			{% csrf_token %}
+			{% comment %} Sign Up {% endcomment %}
+			<div class="container__form container--signup">
+				<div class="form" id="form1">
+					<h2 class="form__title">Sign Up</h2>
+					<input type="name" placeholder="User" class="input" name="name"/>
+					<input type="email" placeholder="Email" class="input" name="email"/>
+					<input type="password" placeholder="Password" class="input" name="password"/>
+					<button type="submit" name="sign_up" class="btn">Sign Up</button>
 				</div>
-				<div class="overlay__panel overlay--right">
-					<button class="btn" id="signUp">Sign Up</button>
+			</div>
+		
+			{% comment %} Sign In {% endcomment %}
+			<div class="container__form container--signin">
+				<div class="form" id="form2">
+					<h2 class="form__title">Sign In</h2>
+					<input type="email" placeholder="Email" class="input" name="email" />
+					<input type="password" placeholder="Password" class="input" name="password"/>
+					<a href="#" class="link">Forgot your password?</a>
+					<button type="submit" name="sign_in" class="btn">Sign In</button>
+				</div>
+			</div>
+			</form>
+
+			{% comment %} Overlay {% endcomment %}
+			<div class="container__overlay">
+				<div class="overlay">
+					<div class="overlay__panel overlay--left">
+						<button class="btn" id="signIn">Sign In</button>
+					</div>
+					<div class="overlay__panel overlay--right">
+						<button class="btn" id="signUp">Sign Up</button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
-
-<script src="{% static 'cls/js/script.js' %}"></script>
 <script src="{% static 'cls/js/script-sign.js' %}"></script>
+
 {% endblock %}

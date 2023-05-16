@@ -18,15 +18,16 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     </div>
     <div class="icons">
         <div class="button-about-us">
-            <span>ABOUT US</span>
+            <a href="{% url 'about-us' %}"><span>ABOUT US</span></a>
             <img src="{% static 'cls/images/about-us.png' %}" alt="logo">        
         </div>
         <div class="button-settings">
-            <span>SETTINGS</span>
+            <a href="{% url 'settings' %}"><span>SETTINGS</span></a>
             <img src="{% static 'cls/images/settings.png' %}" alt="logo">        
         </div>
         <div class="button-profile">
-            <a class='cd-sign' href="{% url 'sign' %}"><span>PROFILE</span></a>
+            {% comment %} check on login/unlogin for user {% endcomment %}
+            <a class='cd-sign' href="{% url 'profile' %}"><span>PROFILE</span></a>
             <img src="{% static 'cls/images/profile.png' %}" alt="logo">         
         </div>
     </div>

@@ -1,15 +1,19 @@
 {% extends 'cls/base.html' %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'cls/css/style-search.css' %}" />
-      <section class="demo">
-        <dl class="list">
-            <dt>Product</dt>
+    <link rel="stylesheet" type="text/css" href="{% static 'cls/css/style-search.css' %}" />
+    <div class="demo">
+        <p>Product</p>
+
+        <ul class="list">
             {% for item in result1.results %}
-            <dd><a href="{% url 'product' item.id %}">{{ item.title }}</a></dd>
+            {% comment %} need image_url of product {% endcomment %}
+            <li><a class="link" href="{% url 'product' item.id %}">{{ item.title }}
+                <span><img src={{ item.image_url }} width="100px" /></span>
+            </a></li>
             {% endfor %}
-        </dl>
-    </section>
+        </ul>
+    </div>
     
 
 <script src="{% static 'cls/js/script-search.js' %}"></script>

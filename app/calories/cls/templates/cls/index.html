@@ -18,14 +18,42 @@
         {% if user %}
         <div class="history">
             <h1 id="history">History</h1>
+            <div class="product-list">
+            <span><img src="{% static 'cls/images/logo.png' %}" alt="logo1"></span>
+            <span><img src="{% static 'cls/images/logo.png' %}" alt="logo2"/></span>
+            <span><img src="{% static 'cls/images/logo.png' %}" alt="logo"/></span>
+            <span><img src="{% static 'cls/images/logo.png' %}" alt="logo1"/></span>
+            <span><img src="{% static 'cls/images/logo.png' %}" alt="logo1"/></span>
+            <span><img src="{% static 'cls/images/logo.png' %}" alt="logo"></span>
+            <span><img src="{% static 'cls/images/logo.png' %}"/></span>
+            <span><img src="{% static 'cls/images/logo.png' %}"/></span>
+            <span><img src="{% static 'cls/images/logo.png' %}"/></span>
+            <span><img src="{% static 'cls/images/logo.png' %}"/></span>
+            <span><img src="{% static 'cls/images/logo.png' %}" alt="logo"></span>
+            <span><img src="{% static 'cls/images/logo.png' %}"/></span>
+            <span><img src="{% static 'cls/images/logo.png' %}"/></span>
+
+            </div>
             {% for product in history.product %}
                 <div class="product">
-                    <p><a href="{% url 'product' product.id %}">product.title</a></p>
+
+
+
+
+
+
+                    <p><a href="{% url 'product' product.id %}">{{ product.title }}</a></p>
                     <img src={{ product.image_url }} />
                 </div>
             {% endfor %}
         </div>
+        {% else %}
+        <div class="error-message">
+            <h1 id="error"><a href="{% url 'sign' %}">Sign In</a> for view history!</h1>
+            
+        </div>
         {% endif %}
+
     </div>
     <script src="{% static 'cls/js/script.css' %}"></script>
 {% endblock %}

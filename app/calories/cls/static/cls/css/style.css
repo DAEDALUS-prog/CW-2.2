@@ -62,6 +62,30 @@
 }
 
 
+#history {
+	margin-top: 50px;
+	margin-left: 20px;
+}
+
+
+.product-list {
+	width: 1000px;
+	align-items: center;
+	text-align: center;
+	margin: 0 auto;
+
+  }
+  
+  .product-list img {
+	width: 150px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 20px;
+  }
+  
+
+
+
 
 
 

@@ -1,0 +1,26 @@
+{% extends 'cls/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cls/css/style-profile.css' %}" />
+    <div class="body">
+        <div class="module">
+                <img id="profile-img" src="{% static "cls/images/none-profile.png" %}" />
+                {% comment %} name {{ name && email }} {% endcomment %}
+                <div class="profile-info">
+                    <p id="name">- name -</p>
+                    <p id="email">- email -</p>
+                </div>
+
+                <div class="social">
+                    <img src="{% static "cls/images/facebook.png" %}" />
+                    <img src="{% static "cls/images/instagram.png" %}" />
+                    <img src="{% static "cls/images/google.png" %}" />
+                </div>
+                <span id="edit"><a href="{% url 'settings' %}">EDIT DATA<a/></span>
+
+        </div>
+
+    </div>
+    
+    <script src="{% static 'cls/js/script.css' %}"></script>
+{% endblock %}
